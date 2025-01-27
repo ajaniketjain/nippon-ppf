@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/profile']"><ion-icon name="ellipsis-vertical-outline"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-title>
+      <img src="https://nipponpaint.co.in/wp-content/uploads/2024/09/cropped-Nippon-Taglines_Nippon-Paint-250x71.png">
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button><ion-icon name="information-circle-outline"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- <ion-searchbar></ion-searchbar> -->
+
+  <ion-slides>
+    <ion-slide><img style="height: 134px;
+      object-fit: cover;
+      width: 100%;" src="https://bravoprotectionmn.com/wp-content/uploads/2021/05/Paint-Protection-Film-vs.-Ceramic-Coating-Bravo-Protection-10-scaled.jpg"></ion-slide>
+    <ion-slide><img src="https://nipponpaint.co.in/wp-content/uploads/2024/09/nippon-paint-india-great-place-to-work-certified-2024-2025.jpg"></ion-slide>
+   
+  </ion-slides>
+
+  <ion-text>
+    <h4 px-20>Choose your Product</h4>
+  </ion-text>
+
+  <ion-list px-20 >
+    <ion-item class="np-product" *ngFor="let product of products" (click)="openProductDetail(product)" lines="none">
+      <ion-img src="https://i.imgur.com/lTRDgeE.jpeg"></ion-img>
+      <ion-label>
+
+        <h2>{{ product.name }}</h2>
+        
+
+        <h4>{{ product.finish }} Finish</h4>
+
+        <small>{{ product.durability }} Durability</small>
+
+        <!-- <h4>₹ {{ product.price }}</h4> -->
+
+        <ion-button expand="full">Add Insurance</ion-button>
+   
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
+</ion-content>

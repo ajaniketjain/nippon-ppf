@@ -1,0 +1,19 @@
+ion-content ion-toolbar {
+  --background: translucent;
+}
+
+ion-header {
+  ion-toolbar {
+  --background: #0c4389;
+  color: #fff;
+  }
+}
+
+ion-content {
+  --background: #0c43890d;
+}
+
+ion-searchbar {
+  --border-radius: 10px;
+    --box-shadow: none;
+}

@@ -1,0 +1,46 @@
+
+
+<ion-content>
+  <div text-center px-20 class="logo">
+    <br/>
+    <img width="350" src="https://nipponpaint.co.in/wp-content/uploads/2024/09/cropped-Nippon-Taglines_Nippon-Paint-250x71.png">
+  </div>
+
+  <div id="container">
+    <!-- <form (ngSubmit)="onLogin()" px-20>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+      </ion-item>
+      <ion-button type="submit" [disabled]="!email || !password" fill="solid">Login</ion-button>
+    </form> -->
+
+    <form (ngSubmit)="onSubmit()" px-20>
+      <!-- Mobile Number Section -->
+      <div *ngIf="!isOtpSent">
+        <ion-item>
+          <ion-label position="floating">Mobile Number</ion-label>
+          <ion-input type="tel" [(ngModel)]="mobileNumber" name="mobileNumber" required></ion-input>
+        </ion-item>
+        <ion-button expand="full" type="submit" [disabled]="!mobileNumber">Send OTP</ion-button>
+      </div>
+  
+      <!-- OTP Section -->
+      <div *ngIf="isOtpSent">
+        <!-- Display Mobile Number and OTP Sent Message -->
+        <p>OTP has been sent to: <strong>{{ mobileNumber }}</strong></p>
+        <ion-item>
+          <ion-label position="floating">OTP</ion-label>
+          <ion-input type="text" [(ngModel)]="otp" name="otp" required></ion-input>
+        </ion-item>
+        <ion-button expand="full" (click)="onVerify()" [disabled]="!otp">Verify OTP</ion-button>
+      </div>
+    </form>
+
+  </div>
+
+</ion-content>
